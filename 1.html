@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="bower_components/angular/angular.js"></script>
+    <script>
+        angular.module('myapp', []).controller('MyController', function ($scope) {
+            $scope.message = 'Hello, World!';
+        }).run(function ($templateCache) {
+            $templateCache.put('1_template.html', 'This is a template from templateCahe');
+        });
+    </script>
+</head>
+<body>
+    <div ng-controller="MyController">{{message}}</div>
+    <div ng-include=" '1_template.html' "></div>
+</body>
+</html>
